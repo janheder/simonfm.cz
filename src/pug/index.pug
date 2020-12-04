@@ -1,0 +1,91 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        include _modal-form.pug
+        section.hero(id="anchor-hero")
+            .hero__bg-symbols
+            .container.hero__container
+                h1.hero__title Velkoobchod v oblasti nářadí a nástrojů na obrábění kovů, dřeva a stavebních hmot, upínacího nářadí, brusiva a měřidel.    
+                .hero__buttons
+                    a.btn(href="#anchor-services") Více o nás #[span.arrow-icon.white.btn__icon]
+                    a.btn.btn-white(href="#anchor-cta") Kontakty
+
+        section.services(id="anchor-services")
+            .container
+                h2.services__title Inovations for daily life
+                .row
+
+                    .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-4.services__col
+                        .services-single
+                            .services-single__icon-wrap
+                                img.services-single__icon(src=URLbase+"img/service-icon-sd.svg" alt="Software development")
+                            h5.services-single__title Software development
+                            p.services-single__text We provide our customers with solutions for their specific problems. Tailoring our apps for their needs.
+
+                    .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-4.services__col
+                        .services-single
+                            .services-single__icon-wrap
+                                img.services-single__icon(src=URLbase+"img/service-icon-fr.svg" alt="Face recognition")
+                            h5.services-single__title Face recognition
+                            p.services-single__text Using technology from smartphones we can develop simple yet effective face recognition solutions.
+
+
+                    .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-4.services__col
+                        .services-single
+                            .services-single__icon-wrap
+                                img.services-single__icon(src=URLbase+"img/service-icon-ar.svg" alt="Augmented reality")
+                            h5.services-single__title Augmented reality
+                            p.services-single__text Our team of 3D designers and developers is capable of creating and adjusting another layer of our life.
+
+
+        section.app(id="anchor-app")
+            .container
+                .row
+                    .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6.app__col-1
+                        .app__img-wrap
+                            img.app__img(data-src=URLbase+"img/app-screen.png" src=URLbase+"img/app-screen.png" alt="Facy App" title="Facy App")
+
+                    .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6.app__col-2
+                        h5.app__subtitle Our work
+                        h3.app__title Facy App
+                        p.app_text Enjoy fun with your friends and Facy – fun and fancy 3D selfie camera with amazing realtime 3D masks and effects.
+
+                        a.btn.app__appstore-btn(href="https://itunes.apple.com/us/app/facy-3d-face-selfie-changer/id1343112514") #[span #[img(src=URLbase+"img/apple-icon.svg" alt="Available on the App Store")]] #[span Available on the #[b App Store]]
+
+
+        section.cta(id="anchor-cta")
+            .container.cta__container
+                h3.cta__title If you are looking for an interesting investment opportunity, do not hesitate to contact us.
+                .cta__btns
+                    span.btn.btn-white.cta__button(data-toggle="modal" data-target="#modal-form") Let's talk #[span.arrow-icon.btn__icon]
+
+        
+        include _footer.pug
+
+        include _js-include.pug
+        

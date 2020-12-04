@@ -1,0 +1,301 @@
+/* ========================================================================== */
+/* HERO SECTION */
+/* ========================================================================== */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 30rem 0;
+    background-color: $bg-dark;
+    color: $text-white;
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+    z-index: 2;
+    overflow: hidden;
+}
+.hero__bg-symbols{
+    background: url("../img/bg-shapes.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0%;
+    right: -70%;
+    height: 120%;
+    width: 120%;
+    z-index: -1;
+}
+.hero__container{
+    z-index: 2;
+}
+.hero__title{
+    font-weight: 400;
+    font-family: $font-family-secondary;
+    color: $text-white;
+    font-size: 4.2rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+.hero__text{
+    font-weight: 400;
+    color: $text-light;
+    font-size: 1.8rem;
+    margin: 1rem 0 6rem 0;
+    max-width: 90%;
+}
+.hero__buttons{
+    @include flexbox();
+
+    .btn:first-child{
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width:991px){
+    .hero {
+        padding: 10rem 0;
+    }
+    .hero__title{
+        font-size: 3.6rem;
+        margin: 0;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+    }
+    .hero__text{
+        margin: 1rem 0 4rem 0;
+    }
+}
+@media screen and (max-width:600px){
+
+}
+@media screen and (max-width:420px){
+
+}
+
+
+/* ========================================================================== */
+/* SERVICES */
+/* ========================================================================== */
+
+.services{
+    background: $bg-light;
+    padding: 10rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.services__col{
+    padding: 10px 15px;
+}
+.services__title{
+    text-align: center;
+    font-size: 3.6rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $text-primary;
+    margin-bottom: 3rem;
+}
+.services-single{
+    padding: 5.8rem 3rem 5rem 3rem;
+    background: $bg-white;
+    text-align: center;
+    height: 100%;
+    border-radius: $border-radius-primary;
+    @include box-shadow(0px,2px,3px,rgba(0,0,0,0.05));
+    @include transition(0.3s ease all);
+}
+.services-single__icon-wrap{
+    background: $brand-primary;
+    height: 70px;
+    width: 70px;
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    margin: 0 auto;
+    color: $text-white;
+    border-radius: $border-radius-primary;
+    position: relative;
+    z-index: 2;
+
+    &::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: -8px;
+        top: -8px;
+        background: $brand-primary;
+        opacity: 0.4;
+        border-radius: $border-radius-primary;
+        z-index: -1;
+        @include transition(0.5s ease all);
+    }
+}
+.services-single{
+    &:hover, &:active, &:focus{
+        @include box-shadow(0px,4px,5px,rgba(0,0,0,0.1));
+        @include translate(0,-5px);
+
+        .services-single__icon-wrap::after{
+            top: -8px;
+            left: 8px;
+        }
+    }
+}
+.services-single__icon{
+    background: $brand-primary;
+    height: 36px;
+}
+.services-single__title{
+    font-size: 2.2rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: $text-primary;
+    margin-top: 2rem;
+}
+.services-single__text{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $text-secondary;
+    margin: 0;
+}
+
+/* ========================================================================== */
+/* APP */
+/* ========================================================================== */
+
+.app{
+    background: $bg-white;
+    padding: 15rem 0;
+}
+.app__img-wrap{
+    position: relative;
+    text-align: center;
+}
+.app__img{
+    position: relative;
+    width: 400px;
+}
+.app__subtitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $text-secondary;
+    margin-bottom: 0rem;
+    text-transform: uppercase;
+}
+.app__title{
+    font-size: 3.6rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $text-primary;
+    margin-bottom: 1.5rem;
+}
+.app_text{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $text-secondary;
+    margin: 0;
+    margin-bottom: 4rem;
+    max-width: 400px;
+}
+.app__appstore-btn{
+    height: 7rem;
+    font-weight: 500;
+    font-size: 14px;
+    span{
+        text-align: left;
+        line-height: 1.1;
+
+        &:first-child{
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            
+        }
+    }
+    img{
+        margin-right: 2rem;
+        height: 4rem;
+        width: 4rem;
+    }
+    b{
+        font-size: 2.6rem;
+        display: block;
+        width: 100%;
+    }
+}
+@media screen and (min-width:768px){
+    .app__img{
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        @include translate(-50%,0);
+        @include transition(0.5s ease all);
+
+        &:hover, &:active, &:focus{
+            @include translate(-50%, -20px);
+        }
+    }
+}
+@media screen and (max-width:767px){
+    .app{
+        padding: 10rem 0;
+        text-align: center;
+    }
+    .app__col-1{
+        order: 1;
+        margin-top: 4rem;
+    }
+    .app__col-2{
+        order: 0;
+    }
+    .app__img-wrap{
+        margin-bottom: -250px;
+    }
+    .app__img{
+        width: 300px;
+    }
+}
+
+/* ========================================================================== */
+/* INDEX CTA */
+/* ========================================================================== */
+
+.cta{
+    background: $brand-primary;
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    &::after{
+        content: url("../img/bg-shapes.svg");
+        position: absolute;
+        bottom: -100%;
+        right: 0%;
+        height: 60%;
+        width: 60%;
+        z-index: -1;
+        @include rotate(90);
+    }
+}
+.cta__title{
+    font-weight: 400;
+    margin: 0 auto;
+    font-size: 3rem;
+    line-height: 1.5;
+    width: 100%;
+    padding: 0;
+    color: $text-white;
+    max-width: 860px;
+    margin-bottom: 4rem;
+}
+.cta__btns{
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+}
